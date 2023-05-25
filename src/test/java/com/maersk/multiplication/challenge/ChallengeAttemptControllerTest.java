@@ -32,7 +32,7 @@ class ChallengeAttemptControllerTest {
     private MockMvc mvc;
 
     @Autowired
-    private JsonbTester<ChallengeAttemptDTO> jsonRequestAttempt;
+    private JacksonTester<ChallengeAttemptDTO> jsonRequestAttempt;
 
     @Autowired
     private JacksonTester<ChallengeAttempt> jsonResultAttempt;
@@ -60,6 +60,7 @@ class ChallengeAttemptControllerTest {
         then(response.getContentAsString()).isEqualTo(jsonResultAttempt.write(expectedResponse).getJson());
     }
 
+    @Test
     void postInvalidResult() throws Exception{
         // given an attempt with invalid input data
         ChallengeAttemptDTO attemptDTO = new ChallengeAttemptDTO(2000, -70, "john", 1);

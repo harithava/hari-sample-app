@@ -16,7 +16,7 @@ public class ChallengeServiceImpl implements ChallengeService {
 
         // Builds the domain object, Null id for now.
         ChallengeAttempt challengeAttempt = new ChallengeAttempt(null,
-                user.getId(),
+                user,
                 resultAttempt.factorA(),
                 resultAttempt.factorB(),
                 resultAttempt.guess(),
